@@ -1,0 +1,141 @@
+.student {
+  padding: 110px 70px 100px;
+  background-color: #fff;
+}
+
+@media screen and (max-width: 800px) {
+  .student {
+    padding: 90px 50px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .student {
+    padding: 70px 14px;
+  }
+}
+
+.student__info {
+  display: flex;
+  justify-content: space-between;
+  padding: 66px 0 0;
+  gap: 50px;
+}
+
+@media screen and (max-width: 550px) {
+  .student__info {
+    padding: 60px 0 0;
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+}
+
+.student__text {
+  max-width: 600px;
+  width: 100%;
+}
+
+.student__name {
+  color: #000;
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 1.16;
+  letter-spacing: -2px;
+  margin: 0;
+  padding: 0 0 18px;
+}
+
+@media screen and (max-width: 800px) {
+  .student__name {
+    font-size: 40px;
+    line-height: 1;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .student__name {
+    font-size: 30px;
+  }
+}
+
+.student__title {
+  color: #000;
+  font-size: 18px;
+  line-height: 1.1;
+  font-weight: 500;
+  margin: 0;
+  padding: 0 0 26px;
+}
+
+@media screen and (max-width: 800px) {
+  .student__title {
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 0 0 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .student__title {
+    font-size: 11px;
+  }
+}
+
+.student__about {
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.55;
+  margin: 0;
+  padding: 0 0 99px;
+}
+
+@media screen and (max-width: 800px) {
+  .student__about {
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 0 0 87px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .student__about {
+    font-size: 11px;
+    padding: 0 0 40px;
+  }
+}
+
+.student__link {
+  color: #000;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+.student__link:hover {
+  opacity: 0.6;
+}
+
+.student__image {
+  height: 327px;
+  width: 270px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 800px) {
+  .student__image {
+    height: 307px;
+    width: 255px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .student__image {
+    max-height: 352px;
+    max-width: 292px;
+    height: 100%;
+    width: 100%;
+    align-self: center;
+  }
+}
