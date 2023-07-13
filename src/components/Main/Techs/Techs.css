@@ -16,6 +16,25 @@
 }
 
 .techs__header {
+  color: #000;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.88px;
+  width: 100%;
+  padding: 0 0 23px;
+  margin: 0;
+  border-bottom: solid 1px #000;
+}
+
+@media screen and (max-width: 600px) {
+  .techs__header {
+    font-size: 18px;
+    padding: 0 0 28px;
+  }
+}
+
+.techs__subheader {
   text-align: center;
   width: 100%;
   max-width: 600px;
@@ -29,13 +48,13 @@
 }
 
 @media screen and (max-width: 800px) {
-  .techs__header {
+  .techs__subheader {
     padding: 80px 0 22px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .techs__header {
+  .techs__subheader {
     font-size: 30px;
     padding: 60px 0 24px;
   }

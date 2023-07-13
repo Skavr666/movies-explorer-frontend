@@ -1,20 +1,20 @@
-.preloader {
+.load {
   padding: 0 70px 80px;
 }
 
 @media screen and (max-width: 890px) {
-  .preloader {
+  .load {
     padding: 0 30px 80px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .preloader {
+  .load {
     padding: 0 10px 80px;
   }
 }
 
-.preloader__button {
+.load__button {
   width: 100%;
   text-align: center;
   font-size: 12px;
@@ -27,7 +27,7 @@
   cursor: pointer;
 }
 
-.preloader__button:hover {
+.load__button:hover {
   background: #000;
   color: #fff;
 }

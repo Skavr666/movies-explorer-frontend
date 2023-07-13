@@ -1,11 +1,10 @@
 import { Link } from 'react-router-dom';
-import logo from '../../images/logo.svg';
 import profileIcon from '../../images/profile_icon.png';
 
 function Header({ colorScheme }) {
   return (
     <header className={`header ${colorScheme.isWhite && 'header_white'}`}>
-      <img className='header__logo' src={logo} alt='Лого'/>
+      <Link className='header__logo' to='/' />
         {!colorScheme.isWhite ? (
         <nav className='header__nav'>
           <Link to="/signup" className='header__link'>Регистрация</Link>

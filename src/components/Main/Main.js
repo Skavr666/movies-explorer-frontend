@@ -10,11 +10,13 @@ function Main() {
   return (
     <div>
       <Header colorScheme={{ isWhite: false }}/>
-      <Promo/>
-      <AboutProject/>
-      <Techs/>
-      <AboutMe/>
-      <Portfolio/>
+      <main>
+        <Promo/>
+        <AboutProject/>
+        <Techs/>
+        <AboutMe/>
+        <Portfolio/>
+      </main>
       <Footer/>
     </div>
   )

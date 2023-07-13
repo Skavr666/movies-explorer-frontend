@@ -6,7 +6,7 @@ function Auth({onRegister}) {
   const buttonText = (`${onRegister ? 'Зарегистрироваться' : 'Войти'} `);
 
   return (
-    <section className="auth">
+    <main className="auth">
       <img src={logo} alt="Лого" className="auth__logo"/>
       <h2 className='auth__header'>{headerText}</h2>
       <form className='auth__form'>
@@ -30,7 +30,7 @@ function Auth({onRegister}) {
       ) : (
       <p className='auth__footnote'>Ещё не зарегистрированы? <Link to='/signup' className='auth__link'>Регистрация</Link></p>
       )}
-    </section>
+    </main>
   )
 }
 

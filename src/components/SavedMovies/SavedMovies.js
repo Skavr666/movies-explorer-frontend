@@ -7,8 +7,10 @@ function SavedMovies() {
   return (
     <div>
       <Header colorScheme={{ isWhite: true }} />
-      <SearchForm />
-      <MoviesCardList toDelete={true} />
+      <main>
+        <SearchForm />
+        <MoviesCardList toDelete={true} />
+      </main>
       <Footer />
     </div>
   )

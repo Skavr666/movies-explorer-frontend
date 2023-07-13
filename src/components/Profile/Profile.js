@@ -19,18 +19,18 @@ function Profile() {
   return (
     <div>
       <Header colorScheme={{ isWhite: true }}/>
-      <section className='profile'>
+      <main className='profile'>
         <h2 className='profile__greeting'>
           Привет, {userName}!
         </h2>
         <form className='profile__form'>
           <fieldset className='profile__fieldset'>
             <p className='profile__input-name'>Имя</p>
-            <input className='serch-form__input profile__input' type="text" required value={userName || ''} onFocus={onFocus} onBlur={onBlur}/>
+            <input className='profile__input' type="text" required value={userName || ''} onFocus={onFocus} onBlur={onBlur}/>
           </fieldset>
           <fieldset className='profile__fieldset'>
             <p className='profile__input-name'>E-mail</p>
-            <input className='serch-form__input profile__input' type="text" required value={userEmail || ''} onFocus={onFocus} onBlur={onBlurEmail}/>
+            <input className='profile__input' type="text" required value={userEmail || ''} onFocus={onFocus} onBlur={onBlurEmail}/>
           </fieldset>
           <button className='profile__button profile__button_edit' type='submit'>
             Редактировать
@@ -39,7 +39,7 @@ function Profile() {
             Выйти из аккаунта
           </button>
         </form>
-      </section>
+      </main>
     </div>
   )
 }

@@ -52,7 +52,7 @@
   }
 }
 
-.serch-form__input {
+.search-form__input {
   border:none;
   max-width: 1000px;
   width: 100%;
@@ -66,25 +66,25 @@
 }
 
 @media screen and (max-width: 600px) {
-  .serch-form__input {
+  .search-form__input {
     font-size: 18px;
     text-align: left;
   }
 }
 
-.serch-form__input:focus {
+.search-form__input:focus {
   outline-color: transparent;
   outline-style: none;
   color: #000;
 }
 
-.serch-form__icon {
+.search-form__icon {
   width: 34px;
   height: 34px;
 }
 
 @media screen and (max-width: 600px) {
-  .serch-form__icon {
+  .search-form__icon {
     visibility: hidden;
     position: absolute;
   }
