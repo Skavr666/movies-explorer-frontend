@@ -1,0 +1,33 @@
+.load {
+  padding: 0 70px 80px;
+}
+
+@media screen and (max-width: 890px) {
+  .load {
+    padding: 0 30px 80px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .load {
+    padding: 0 10px 80px;
+  }
+}
+
+.load__button {
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: #000;
+  background: #F9F9F9;
+  border: 0;
+  border-radius: 6px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.load__button:hover {
+  background: #000;
+  color: #fff;
+}
