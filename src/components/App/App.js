@@ -16,10 +16,7 @@ function App() {
   const location = useLocation();
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [currentUser, setCurrentUser] = useState(() => {
-    const lastUserData = JSON.parse(localStorage.getItem('savedUser')) || {};
-    return lastUserData;
-  });
+  const [currentUser, setCurrentUser] = useState({});
 
   function handleGetUserData() {
     const jwt = localStorage.getItem('jwt');

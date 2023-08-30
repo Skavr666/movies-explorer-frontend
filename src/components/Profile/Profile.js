@@ -5,7 +5,8 @@ import { useState, useContext, useEffect } from 'react';
 
 function Profile({ onEdit, onSetIsLoggedIn }) {
   const navigate = useNavigate();
-  const userData = useContext(CurrentUserContext);
+  const contextData = useContext(CurrentUserContext);
+  const userData = contextData.user;
 
   const [name, setName] = useState(userData.name || '');
   const [email, setEmail] = useState(userData.email || '');
@@ -23,15 +24,20 @@ function Profile({ onEdit, onSetIsLoggedIn }) {
   const isEmailValid = regexEmail.test(email);
 
   function handleEditName(e) {
-    setName(e.target.value)
-    setNameError(e.target.validationMessage)
-    setNameValid(e.target.validity.valid)
+    setName(e.target.value);
+    setNameError(e.target.validationMessage);
+    setNameValid(e.target.validity.valid);
+  }
+
+  function setNewData(name, email) {
+    userData.name = name;
+    userData.email = email;
   }
 
   function handleEditEmail(e) {
-    setEmail(e.target.value)
-    setEmailError(e.target.validationMessage)
-    setEmailValid(e.target.validity.valid)
+    setEmail(e.target.value);
+    setEmailError(e.target.validationMessage);
+    setEmailValid(e.target.validity.valid);
   }
 
   function handleCheckOut() {
@@ -47,10 +53,10 @@ function Profile({ onEdit, onSetIsLoggedIn }) {
 
     return onEdit(name, email)
       .then(() => {
+        setNewData(name, email);
         setIsGreenTooltip(true);
         setTooltip('Данные пользователя успешно изменены');
         setIsSameData(true);
-        localStorage.setItem('savedUser', JSON.stringify({ name, email }));
       })
       .catch(err => {
         setIsGreenTooltip(false);
@@ -76,13 +82,13 @@ function Profile({ onEdit, onSetIsLoggedIn }) {
   };
 
   useEffect(() => {
-    const disabled = isSameData || !isEmailValid || !disabledSubmiter
-    setIsButtonDisabled(disabled)
-  }, [disabledSubmiter, isEmailValid, email, name, isSameData])
+    const disabled = isSameData || !isEmailValid || !disabledSubmiter;
+    setIsButtonDisabled(disabled);
+  }, [disabledSubmiter, isEmailValid, email, name, isSameData]);
 
   useEffect(() => {
     if (userData.name === name && userData.email === email) {
-      setIsSameData(true)
+      setIsSameData(true);
     } else setIsSameData(false)
   }, [name, email, userData]);
 
