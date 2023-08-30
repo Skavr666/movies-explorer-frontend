@@ -57,9 +57,6 @@ function Register({ onSignUp }) {
     e.preventDefault();
     const { name, email, password } = formValue;
     onSignUp(name, email, password)
-    .then(() => {
-      localStorage.setItem('savedUser', JSON.stringify({ name, email }));
-    })
     .catch(err => {
       if (err === '409') {
         setTooltip('Такой пользователь уже существует');
