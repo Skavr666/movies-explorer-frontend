@@ -27,7 +27,7 @@
   display: flex;
   justify-content: space-between;
   padding: 16px 0;
-  border-bottom: solid 1px #E8E8E8;
+  border-top: solid 1px #E8E8E8;
   margin: 0;
   width: 410px;
 }
@@ -38,7 +38,7 @@
   }
 }
 
-.profile__fieldset:last-of-type {
+.profile__fieldset:first-of-type {
   border: 0;
 }
 
@@ -112,8 +112,27 @@
   margin: 204px auto 16px;
 }
 
+.profile__button_edit:disabled {
+  cursor: default;
+  text-decoration: none;
+  color: #a5a5a5;
+}
+
 @media screen and (max-width: 500px) {
   .profile__button_edit {
     margin: 379px auto 16px;
   }
+}
+
+.profile__tooltip {
+  color: #FF4062;
+  text-align: right;
+  font-size: 12px;
+  line-height: 16px;
+  max-width: 410px;
+  width: 100%;
+}
+
+.profile__tooltip_green {
+  color: #1ae03f;
 }

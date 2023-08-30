@@ -6,10 +6,10 @@ import AboutMe from '../Main/AboutMe/AboutMe.js';
 import Portfolio from '../Main/Portfolio/Portfolio.js';
 import Footer from '../Footer/Footer.js';
 
-function Main() {
+function Main({isLoggedIn}) {
   return (
     <div>
-      <Header colorScheme={{ isWhite: false }}/>
+      <Header colorScheme={{ isWhite: false }} isLoggedIn={isLoggedIn}/>
       <main>
         <Promo/>
         <AboutProject/>

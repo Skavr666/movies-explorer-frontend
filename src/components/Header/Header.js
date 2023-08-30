@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import profileIcon from '../../images/profile_icon.png';
 
-function Header({ colorScheme }) {
+function Header({ colorScheme, isLoggedIn }) {
   return (
     <header className={`header ${colorScheme.isWhite && 'header_white'}`}>
       <Link className='header__logo' to='/' />
-        {!colorScheme.isWhite ? (
+        {!colorScheme.isWhite && !isLoggedIn ? (
         <nav className='header__nav'>
           <Link to="/signup" className='header__link'>Регистрация</Link>
           <Link to="/signin" className='header__button'>Войти</Link>
