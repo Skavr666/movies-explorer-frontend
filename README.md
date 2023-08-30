@@ -5,4 +5,4 @@
 
 Ссылка на макет: https://disk.yandex.ru/d/EsteQJkZJnDYWg
 
-Сылка на пул реквест: 
+Сылка на пул реквест: https://github.com/Skavr666/movies-explorer-frontend/pull/2
