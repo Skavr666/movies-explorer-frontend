@@ -57,7 +57,8 @@ function App() {
         localStorage.setItem("jwt", res.token);
         setIsLoggedIn(true);
         navigate("/movies");
-        return authApi.getToken(res.token)
+        return authApi
+          .getUserData(res.token)
           .then((res) => {
             setCurrentUser({
               ...currentUser,
