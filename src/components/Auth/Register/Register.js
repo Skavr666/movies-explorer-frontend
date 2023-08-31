@@ -67,8 +67,10 @@ function Register({ onSignUp }) {
   };
   
   return (
-    <main className="auth">
-      <img src={logo} alt="Лого" className="auth__logo"/>
+    <main className='auth'>
+      <Link className='auth__logo-link' to='/'>
+        <img src={logo} alt="Лого" className="auth__logo"/>
+      </Link>
       <h2 className='auth__header'>Добро пожаловать!</h2>
       <form className='auth__form' noValidate onSubmit={handleSubmit}>
         <label className='auth__label'>Имя</label>

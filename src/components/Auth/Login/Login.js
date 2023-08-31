@@ -53,7 +53,9 @@ function Login({ onSignIn }) {
 
   return (
     <main className="auth">
-      <img src={logo} alt="Лого" className="auth__logo"/>
+      <Link className='auth__logo-link' to='/'>
+        <img src={logo} alt="Лого" className="auth__logo"/>
+      </Link>
       <h2 className='auth__header'>Рады видеть!</h2>
       <form className='auth__form' noValidate onSubmit={handleSubmit}>
         <label className='auth__label'>E-mail</label>

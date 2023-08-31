@@ -18,17 +18,22 @@
   }
 }
 
-.auth__logo {
+.auth__logo-link {
   width: 38px;
   height: 38px;
-  padding-bottom: 40px;
+  margin-bottom: 40px;
 }
 
 @media screen and (max-width: 480px) {
-  .auth__logo {
-    padding-bottom: 50px;
+  .auth__logo-link {
+    margin-bottom: 50px;
     align-self: center;
   }
+}
+
+.auth__logo {
+  width: 38px;
+  height: 38px;
 }
 
 .auth__header {
