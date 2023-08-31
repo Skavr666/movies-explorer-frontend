@@ -68,18 +68,18 @@ function Profile({ onEdit, onSetIsLoggedIn }) {
       })
   };
 
-  const onFocus = (e) => {
-    e.target.value = "";
-    setTooltip('');
-  };
+  // const onFocus = (e) => {
+  //   e.target.value = "";
+  //   setTooltip('');
+  // };
 
-  const onBlur = (e) => {
-    e.target.value = name;
-  };
+  // const onBlur = (e) => {
+  //   e.target.value = name;
+  // };
 
-  const onBlurEmail = (e) => {
-    e.target.value = email;
-  };
+  // const onBlurEmail = (e) => {
+  //   e.target.value = email;
+  // };
 
   useEffect(() => {
     const disabled = isSameData || !isEmailValid || !disabledSubmiter;
@@ -102,12 +102,12 @@ function Profile({ onEdit, onSetIsLoggedIn }) {
         <form className='profile__form'>
           <fieldset className='profile__fieldset'>
             <p className='profile__input-name'>Имя</p>
-            <input className='profile__input' type="text" required onFocus={onFocus} onBlur={onBlur} onChange={handleEditName} value={name} minLength={2} maxLength={18}/>
+            <input className='profile__input' type="text" required  onChange={handleEditName} value={name} minLength={2} maxLength={18}/>
           </fieldset>
           <span className='profile__tooltip'>{nameError || ''}</span>
           <fieldset className='profile__fieldset'>
             <p className='profile__input-name'>E-mail</p>
-            <input className='profile__input' type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required value={email} onChange={handleEditEmail} onFocus={onFocus} onBlur={onBlurEmail}/>
+            <input className='profile__input' type="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" required value={email} onChange={handleEditEmail} />
           </fieldset>
           <span className='profile__tooltip'>{emailError || ''}</span>
           <span className={`profile__tooltip ${isGreenTooltip ? 'profile__tooltip_green' : ''}`}>{tooltip}</span>
