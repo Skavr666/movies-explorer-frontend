@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 function MoviesCardList({ movie, onSave, savedMovie, onDelete, toDelete }) {
   const location = useLocation();
   
-  const [movieToRender, setMovieToRender] = useState(9);
+  const [movieToRender, setMovieToRender] = useState(12);
   const inSaveMovies = location.pathname === '/saved-movies';
   const showMoreButton = !inSaveMovies;
   const screenWidth = window.innerWidth;
@@ -15,15 +15,19 @@ function MoviesCardList({ movie, onSave, savedMovie, onDelete, toDelete }) {
   
   const handleExtraLoad = () => {
     if (screenWidth < 1280) {
-      setMovieToRender((prevVisibleMovies) => prevVisibleMovies + 4);
+      setMovieToRender((prevVisibleMovies) => prevVisibleMovies + 2);
     } else {
-      setMovieToRender((prevVisibleMovies) => prevVisibleMovies + 9);
+      setMovieToRender((prevVisibleMovies) => prevVisibleMovies + 3);
     }
   };
 
   React.useEffect(() => {
     if (screenWidth < 1280) {
       setMovieToRender(8);
+    }
+
+    if (screenWidth < 636) {
+      setMovieToRender(5);
     }
   }, [screenWidth]);
 
