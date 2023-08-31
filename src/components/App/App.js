@@ -43,7 +43,7 @@ function App() {
     return authApi
       .handleSignUp(name, email, password)
       .then(() => {
-        navigate("/signin");
+        onSignIn(email, password);
       })
   };
 
