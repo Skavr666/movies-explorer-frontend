@@ -1,27 +1,34 @@
-import movieImage from '../../../images/movie.png';
+import defaultImage from '../../../images/movie.png';
+import React, { useState } from 'react';
 
-function MoviesCard({isSaved, toDelete}) {
+function MoviesCard({ name, image, trailerLink, duration, onSave, savedMovie, movieId, onDelete, inSaveMovies, toDelete }) {
+   const [isSaved, setisSaved] = useState(false);
+
   const movieButtonClasses = (
-    `movie__button ${isSaved ? 'movie__button_saved' : ''}`
+    `movie__button ${isSaved ? 'movie__button_saved' : ''} ${toDelete ? 'movie__button_delete' : ''}`
   );
 
   const movieButtonText = (
-    `${isSaved ? '' : 'Сохранить'}`
+    `${toDelete ? '' : `${isSaved ? '' : 'Сохранить'}`}`
   );
+
+  React.useEffect(() => {
+    if (savedMovie) {
+      const result = savedMovie.some((item) => (movieId) === item.movieId)
+      setisSaved(result)
+    }
+  }, [savedMovie]);
 
   return (
     <div className="movie">
       <div className='movie__header'>
-        <h2 className="movie__name">В погоне за Бенкси</h2>
-        <p className="movie__length">27 минут</p>
+        <h2 className="movie__name">{name}</h2>
+        <p className="movie__length">{`${Math.floor(duration / 60)}ч ${duration % 60}м`}</p>
       </div>
-      <img className="movie__image" src={movieImage} alt="В погоне за Бенкси" />
-      {toDelete ? (
-        <button className='movie__button movie__button_delete'></button>
-      ) : (
-        <button className={movieButtonClasses}>{movieButtonText}</button>
-      )}
-      
+      <a href={trailerLink || '/notfound'} target="_blank" rel='noreferrer'>
+        <img className="movie__image" src={image || defaultImage} alt={name} />
+      </a>
+      <button onClick={inSaveMovies ? onDelete : !isSaved ? onSave : onDelete} type='button' className={movieButtonClasses}>{movieButtonText}</button>
     </div>
   )
 }
